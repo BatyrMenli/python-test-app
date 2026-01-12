@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование по программированию</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .welcome {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .user-info {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .user-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .user-info .username {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+        
+        .button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .button-secondary {
+            background: #764ba2;
+            color: white;
+        }
+        
+        .button-secondary:hover {
+            background: #63388e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+        
+        .button-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .button-danger:hover {
+            background: #ee5a52;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .guest-message {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Тестирование по программированию</h1>
+        
+        {% if username %}
+            <div class="user-info">
+                <p>Добро пожаловать!</p>
+                <p class="username">{{ username }}</p>
+            </div>
+            
+            <div class="buttons">
+                <a href="/tests" class="button button-primary">Начать тест</a>
+                <a href="/logout" class="button button-danger">Выход</a>
+            </div>
+        {% else %}
+            <div class="welcome">
+                <p style="color: #666; margin-bottom: 20px;">Проверьте свои знания по программированию</p>
+            </div>
+            
+            <div class="buttons">
+                <a href="/login" class="button button-primary">Вход</a>
+                <a href="/register" class="button button-secondary">Регистрация</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
 
